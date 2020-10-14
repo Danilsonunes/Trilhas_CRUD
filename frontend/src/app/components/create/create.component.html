@@ -1,53 +1,159 @@
 <nav class="navbar navbar-dark bg-warning">
-    <a class="navbar-brand mx-auto" >
-    aqui você pode atualizar as informações das trilhas!!</a>
-   </nav>
-   
-   <div class="container">
-     <div class="row">
-       <div class="clo-md-8 mt-4 mx-auto">
-   
-         <ul class="list-group">
-             <li *ngFor="let info of infoArray" 
-             class="list-group-item list-group-item-action"
-             (click)="openForEdit(info)"
-               
-             >
-             <span class="badge badge-dark">{{info.id}}</span>{{info.name}} - {{info.region}}
+  <a class="navbar-brand mx-auto">
+    aqui você pode atualizar as informações das trilhas!!</a
+  >
+</nav>
 
-
-             </li>
-   
-         </ul>    
-         <div class="card mt-4">
-           <div class="card-boby">
-             <div class="card-title">
-               Regista uma nova trilha!
-             </div>
-           <div class="from-group">
-               <input type="text" [(ngModel)]="selectedInfo.name" placeholder="nome da trinha " class="form-control">
-           </div>
-           <div class="from-group">
-            <input type="text" [(ngModel)]="selectedInfo.region" placeholder="region" class="form-control">
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="trilhaForm" novalidate>
+      <!-- INÍCIO BLOCO:  Nome Trilha-->
+      <div class="form-group">
+        <label class="font-weight-bold" for="nome">Nome da Trilha</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Digite o nome da trilha"
+          formControlName="nome"
+          #nome
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['nome'].invalid &&
+          (trilhaForm.controls['nome'].dirty ||
+            trilhaForm.controls['nome'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['nome'].errors.required">
+          O campo deve ser preenchido
         </div>
-        <button (click)="addOrEdit()" class="btn btn-dark" >
-            Submit  
+      </div>
+      <!-- FIM BLOCO: Employee Name -->
+
+      <!-- INÍCIO BLOCO: Job Role -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="descricao">Descrição</label>
+        <textarea
+          class="form-control"
+          type="text"
+          placeholder="Descrição da trilha"
+          formControlName="descricao"
+          #descricao
+        ></textarea>
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['descricao'].invalid &&
+          (trilhaForm.controls['descricao'].dirty ||
+            trilhaForm.controls['descricao'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['descricao'].errors.required">
+          O campo deve ser preenchido
+        </div>
+      </div>
+      <!-- FIM BLOCO: Descrição -->
+
+      <!-- INÍCIO BLOCO: Salary -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="info_onibus"
+          >Informação Onibus</label
+        >
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Linha de Onibus mais proxima"
+          formControlName="info_onibus"
+          #info_onibus
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['info_onibus'].invalid &&
+          (trilhaForm.controls['info_onibus'].dirty ||
+            trilhaForm.controls['info_onibus'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['info_onibus'].errors.required">
+          O campo deve ser preenchido
+        </div>
+      </div>
+      <!-- FIM BLOCO: Info Onibus -->
+
+      <!-- INÍCIO BLOCO: Localização -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="localizacao">Localização</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Digite a localização da trilha"
+          formControlName="localizacao"
+          #localizacao
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['localizacao'].invalid &&
+          (trilhaForm.controls['localizacao'].dirty ||
+            trilhaForm.controls['localizacao'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['localizacao'].errors.required">
+          O campo deve ser preenchido
+        </div>
+      </div>
+      <!-- FIM BLOCO: Localização -->
+
+      <!-- INÍCIO BLOCO: Employee Registration -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="cadeirante"
+          >A trilha é habilitada para cadeirantes e crianças?</label
+        >
+        <input
+          class="form-control"
+          type="text"
+          class="form-control"
+          placeholder="Digite sim o não"
+          formControlName="cadeirante"
+          #cadeirante
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['cadeirante'].invalid &&
+          (trilhaForm.controls['cadeirante'].dirty ||
+            trilhaForm.controls['cadeirante'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['cadeirante'].errors.required">
+          O campo deve ser preenchido.
+        </div>
+      </div>
+      <!-- FIM BLOCO: Trilha Registration -->
+
+      <div class="form-group">
+        <button
+          (click)="
+            createNewTrilha(
+              nome.value,
+              descricao.value,
+              info_onibus.value,
+              localizacao.value,
+              cadeirante.value
+            )
+          "
+          class="btn btn-primary"
+          [disabled]="trilhaForm.pristine || trilhaForm.invalid"
+        >
+          Adicionar nova trilha
         </button>
-        <button 
-        *ngIf="selectedInfo.id !== 0 "
-        class="btn btn-danger"
-        (click)="Delete()">
-        Delete
-        </button>
-           </div>
-         </div>
-   
-       </div>
-       <div class="clo-md-4">
-        
-       </div>
-     </div>
-   </div>
-   
-   
-   
+      </div>
+    </form>
+  </div>
+</div>

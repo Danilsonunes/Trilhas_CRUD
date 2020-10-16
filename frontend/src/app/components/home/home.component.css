@@ -1,4 +1,16 @@
 img {
-    object-fit: cover;
-    object-position: center;
-    }
+  object-fit: cover;
+  object-position: center;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 100px greenyellow;
+  border: 1px solid green;
+}

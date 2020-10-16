@@ -2,3 +2,20 @@ img {
     object-fit: cover;
     object-position: center;
     }
+
+    .jumbotron{
+        background-color:#66cdaa;
+        height:400px;
+        margin-top: 50px;
+    }
+    .container{
+        justify-content:center;
+        align-items: center;
+       
+    }
+    .container h1{
+        font-size: 64px;
+        font-weight: 700;
+        color: #fff;
+
+    }

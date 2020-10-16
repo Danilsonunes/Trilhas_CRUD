@@ -1,15 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files 
+<<<<<<< HEAD
 body {
-  background: #3ca55c; /* fallback for old browsers */
+  background: #3ca55c;  fallback for old browsers 
   background: -webkit-linear-gradient(
     to bottom,
     #b5ac49,
     #3ca55c
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  );  Chrome 10-25, Safari 5.1-6 
   background: linear-gradient(
     to bottom,
     #b5ac49,
     #3ca55c
+  );  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+  height: 100 vhmax;
+}
+ */
+body {
+  background: #b1c9b8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #53a893,
+    #aff3e8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #53a893,
+    #aff3e8
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height: 100 vhmax;
 }
+/* >>>>>>> 620117b35c1792fbc7328aab352f452cd288d101 */

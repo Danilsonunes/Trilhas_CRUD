@@ -3,6 +3,14 @@ img {
   object-fit: cover;
   object-position: center;
 }
+.img-portada {
+  object-fit: contain;
+  object-position: center;
+}
+.lead {
+  font-weight: 500;
+  color: rgb(63, 62, 62);
+}
 
 .contenedor {
   display: flex;
@@ -10,10 +18,15 @@ img {
   justify-content: center;
   align-items: center;
 }
+.contenedor-p p {
+  color: rgb(63, 62, 62);
+  font-size: 30px;
+  font-weight: 700;
+}
 
 .card:hover {
-  box-shadow: 2px 2px 100px greenyellow;
-  border: 1px solid green;
+  box-shadow: 2px 2px 3px rgb(63, 62, 62);
+  border: 1px solid rgb(13, 82, 13);
 }
 /* =======
     object-fit: cover;
@@ -21,17 +34,37 @@ img {
     } */
 
 .jumbotron {
-  background-color: #66cdaa;
+  background-color: #55a630;
   height: 400px;
-  margin-top: 50px;
+  margin-top: 80px;
 }
-.container {
+/* .container {
   justify-content: center;
   align-items: center;
-}
+} */
 .container h1 {
   font-size: 64px;
   font-weight: 700;
-  color: #fff;
+  color: rgb(63, 62, 62);
 }
+.jumbotron-home {
+  border-radius: 6px;
+  box-shadow: 1px 1px 3px gray;
+}
+.card-color {
+  background: #55a630;
+  box-shadow: 1px 1px 3px gray;
+}
+.card-link {
+  text-decoration: none;
+  color: rgb(63, 62, 62);
+}
+.card-link p {
+  font-weight: 500;
+}
+.card-link h5 {
+  text-align: center;
+  text-decoration: underline;
+}
+
 /* >>>>>>> 620117b35c1792fbc7328aab352f452cd288d101 */

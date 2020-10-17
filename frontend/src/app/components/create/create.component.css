@@ -1,0 +1,12 @@
+form {
+  height: 100vh;
+}
+.card {
+  margin-top: 15px;
+}
+.nav-color {
+  background: cornflowerblue;
+  margin-top: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #7c7c7c;
+}

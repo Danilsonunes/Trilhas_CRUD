@@ -1,3 +1,7 @@
 [1014/163428.894:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
 [1014/213204.683:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
 [1015/132952.353:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1016/211750.877:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[1016/231700.265:ERROR:process_info.cc(617)] range at 0x0, size 0x18 fully unreadable
+[1016/231700.305:ERROR:process_info.cc(617)] range at 0x0, size 0x18 fully unreadable
+[1016/232421.032:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)

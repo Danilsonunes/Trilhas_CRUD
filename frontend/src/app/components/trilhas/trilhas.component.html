@@ -1,9 +1,6 @@
 <div class="container">
-  <button type="button" class="btn btn-warning btn-lg btn-block" href="#">
-    LISTA DE TRILHA
-  </button>
-  <button type="button" class="btn btn-dark btn-lg btn-block">
-    Block level button
+  <button type="button" class="btn btn-color btn-lg btn-block" href="#">
+    LISTA DE TRILHAS
   </button>
 </div>
 
@@ -12,12 +9,14 @@
     <div class="card" *ngFor="let trilha of trilhas">
       <img src="../../../assets/2.png" class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title">Nome: {{ trilha.nome }} Id: {{ trilha.id }}</h5>
+        <h5 class="card-title">Nome: {{ trilha.nome }}</h5>
         <p class="card-text">Descricao: {{ trilha.descricao }}</p>
         <p>Onibus: {{ trilha.info_onibus }}</p>
         <p>Cadeirante: {{ trilha.cadeirante }}</p>
         <p>Localizacao: {{ trilha.localizacao }}</p>
       </div>
+      <button class="btn btn-success btn-lg">Atualizar</button>
+      <button class="btn btn-danger btn-lg">Deletar</button>
     </div>
   </div>
 </div>

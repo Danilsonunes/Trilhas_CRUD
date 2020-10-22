@@ -43,4 +43,40 @@ export class TrilhaService {
     // ==> (GET - url en el back-end): http://localhost:3000/api/trilhas
     return this.http.get(`${this.url}/trilhas`);
   }
+
+  /**
+   * Metodo responsable por la accion del boton editar en el archivo 'updateTrilhas.component.html'
+   */
+
+  editTrilha(id) {
+    // ==> (GET - url en el back-end): http://localhost:3000/api/trilhas/id
+    console.log(id);
+    return this.http.get(`${this.url}/trilhas/${id}`);
+  }
+
+  updateTrilha(
+    nome: any,
+    descricao: any,
+    info_onibus: any,
+    localizacao: any,
+    cadeirante: any,
+    id: number
+  ) {
+    console.log(id);
+    const trilha = {
+      nome,
+      descricao,
+      info_onibus,
+      localizacao,
+      cadeirante,
+      id,
+    };
+
+    return this.http
+      .put(`${this.url}/trilhas/${id}`, trilha)
+      .subscribe((res) => console.log('bien!'));
+  }
+  // deleteTrilha(id) {
+  //   return this.http.delete(`${this.url}/trilhas/${id}`);
+  // }
 }

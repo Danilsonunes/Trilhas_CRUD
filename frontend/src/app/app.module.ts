@@ -9,7 +9,7 @@ import { TrilhasComponent } from './components/trilhas/trilhas.component';
 import { TrilhaComponent } from './components/trilha/trilha.component';
 import { RegionComponent } from './components/region/region.component';
 import { CreateComponent } from './components/create/create.component';
-
+import { UpdateComponent } from './components/atualizar/update.component';
 import { TrilhaService } from './trilha.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     TrilhaComponent,
     RegionComponent,
     CreateComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,

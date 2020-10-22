@@ -6,7 +6,7 @@ import { RegionComponent } from './components/region/region.component';
 import { TrilhasComponent } from './components/trilhas/trilhas.component';
 import { TrilhaComponent } from './components/trilha/trilha.component';
 import { HomeComponent } from './components/home/home.component';
-
+import { UpdateComponent } from './components/atualizar/update.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
 
@@ -16,7 +16,7 @@ const routes: Routes = [
 
   { path: 'trilhas', component: TrilhasComponent },
 
-  { path: 'trilha/:id', component: TrilhaComponent },
+  { path: 'trilhas/:id', component: UpdateComponent },
 
   //{path: '', redirectTo: '/home', pathMatch: 'full'},
 ];

@@ -15,8 +15,18 @@
         <p>Cadeirante: {{ trilha.cadeirante }}</p>
         <p>Localizacao: {{ trilha.localizacao }}</p>
       </div>
-      <button class="btn btn-success btn-lg">Atualizar</button>
-      <button class="btn btn-danger btn-lg">Deletar</button>
+      <button
+        [routerLink]="['/trilhas', trilha.trilha_id]"
+        class="btn btn-success btn-lg"
+      >
+        Atualizar
+      </button>
+      <button
+        (click)="deleteTrilha(trilha.trilha_id)"
+        class="btn btn-danger btn-lg"
+      >
+        Deletar
+      </button>
     </div>
   </div>
 </div>

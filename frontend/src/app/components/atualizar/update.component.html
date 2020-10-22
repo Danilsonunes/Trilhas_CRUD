@@ -1,0 +1,160 @@
+<nav class="navbar navbar-dark nav-color">
+  <a class="navbar-brand mx-auto">
+    aqui você pode atualizar as informações das trilhas!!</a
+  >
+</nav>
+
+<div class="card body">
+  <div class="card-body">
+    <form [formGroup]="trilhaForm" novalidate>
+      <!-- INÍCIO BLOCO:  Nome Trilha-->
+      <div class="form-group">
+        <label class="font-weight-bold" for="nome">Nome da Trilha</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Digite o nome da trilha"
+          formControlName="nome"
+          #nome
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['nome'].invalid &&
+          (trilhaForm.controls['nome'].dirty ||
+            trilhaForm.controls['nome'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['nome'].errors.required">
+          O campo deve ser preenchido
+        </div>
+      </div>
+      <!-- FIM BLOCO: Employee Name -->
+
+      <!-- INÍCIO BLOCO: Job Role -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="descricao">Descrição</label>
+        <textarea
+          class="form-control"
+          type="text"
+          placeholder="Descrição da trilha"
+          formControlName="descricao"
+          #descricao
+        ></textarea>
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['descricao'].invalid &&
+          (trilhaForm.controls['descricao'].dirty ||
+            trilhaForm.controls['descricao'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['descricao'].errors.required">
+          O campo deve ser preenchido
+        </div>
+      </div>
+      <!-- FIM BLOCO: Descrição -->
+
+      <!-- INÍCIO BLOCO: Salary -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="info_onibus"
+          >Informação Onibus</label
+        >
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Linha de Onibus mais proxima"
+          formControlName="info_onibus"
+          #info_onibus
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['info_onibus'].invalid &&
+          (trilhaForm.controls['info_onibus'].dirty ||
+            trilhaForm.controls['info_onibus'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['info_onibus'].errors.required">
+          O campo deve ser preenchido
+        </div>
+      </div>
+      <!-- FIM BLOCO: Info Onibus -->
+
+      <!-- INÍCIO BLOCO: Localização -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="localizacao">Localização</label>
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Digite a localização da trilha"
+          formControlName="localizacao"
+          #localizacao
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['localizacao'].invalid &&
+          (trilhaForm.controls['localizacao'].dirty ||
+            trilhaForm.controls['localizacao'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['localizacao'].errors.required">
+          O campo deve ser preenchido
+        </div>
+      </div>
+      <!-- FIM BLOCO: Localização -->
+
+      <!-- INÍCIO BLOCO: Employee Registration -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="cadeirante"
+          >A trilha é habilitada para cadeirantes e crianças?</label
+        >
+        <input
+          class="form-control"
+          type="text"
+          class="form-control"
+          placeholder="Digite sim o não"
+          formControlName="cadeirante"
+          #cadeirante
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['cadeirante'].invalid &&
+          (trilhaForm.controls['cadeirante'].dirty ||
+            trilhaForm.controls['cadeirante'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['cadeirante'].errors.required">
+          O campo deve ser preenchido.
+        </div>
+      </div>
+      <!-- FIM BLOCO: Trilha Registration -->
+
+      <div class="form-group">
+        <button
+          (click)="
+            updateTrilha(
+              nome.value,
+              descricao.value,
+              info_onibus.value,
+              localizacao.value,
+              cadeirante.value
+            )
+          "
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="trilhaForm.pristine || trilhaForm.invalid"
+        >
+          Atualizar trilha
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -10,18 +10,18 @@ const db = require("../config/database");
 // ===> metodo responsable por dar entrada a una nueva trilha
 
 exports.createTrilha = async (req, res) => {
-  const { nome, descripcion } = req.body;
+  const { nome, descricao, info_onibus, localizacao, cadeirante } = req.body;
   const {
     rows,
-  } = await db.query("INSERT INTO trilhas (nome, descripcion) VALUES($1, $2)", [
-    nome,
-    descripcion,
-  ]);
+  } = await db.query(
+    "INSERT INTO trilhas (nome, descricao, info_onibus, localizacao, cadeirante) VALUES($1, $2, $3, $4, $5)",
+    [nome, descricao, info_onibus, localizacao, cadeirante]
+  );
 
   res.status(201).send({
     message: "Trilha registrada satisfactoriamente!",
     body: {
-      Trilha: { nome, descripcion },
+      Trilha: { nome, descricao, info_onibus, localizacao, cadeirante },
     },
   });
 };
@@ -48,11 +48,11 @@ exports.listTrilhasById = async (req, res) => {
 
 exports.actualizarTrilhasById = async (req, res) => {
   const trilhaId = parseInt(req.params.id);
-  const { nome, descripcion } = req.body;
+  const { nome, descricao, info_onibus, localizacao, cadeirante } = req.body;
 
   const response = await db.query(
-    "UPDATE trilhas SET nome = $1, descripcion = $2 WHERE trilha_id = $3",
-    [nome, descripcion, trilhaId]
+    "UPDATE trilhas SET nome = $1, descricao = $2, info_onibus = $3, localizacao = $4, cadeirante = $5  WHERE trilha_id = $6",
+    [nome, descricao, info_onibus, localizacao, cadeirante, trilhaId]
   );
   res.status(200).send({ message: "trilha atualizada satisfatoriamente!" });
 };

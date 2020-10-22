@@ -51,7 +51,7 @@ exports.actualizarTrilhasById = async (req, res) => {
   const { nome, descricao, info_onibus, localizacao, cadeirante } = req.body;
 
   const response = await db.query(
-    "UPDATE trilhas SET nome = $1, descricao = $2, info_onibus = $3, localizacao = $4, cadeirante = $5  WHERE trilha_id = $6",
+    "UPDATE trilhas SET nome = $1, descricao = $2, info_onibus = $3, localizacao = $4, cadeirante = $5 WHERE trilha_id = $6",
     [nome, descricao, info_onibus, localizacao, cadeirante, trilhaId]
   );
   res.status(200).send({ message: "trilha atualizada satisfatoriamente!" });

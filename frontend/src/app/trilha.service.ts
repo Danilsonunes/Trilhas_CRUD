@@ -48,10 +48,10 @@ export class TrilhaService {
    * Metodo responsable por la accion del boton editar en el archivo 'updateTrilhas.component.html'
    */
 
-  editTrilha(id) {
+  editTrilha(trilha_id) {
     // ==> (GET - url en el back-end): http://localhost:3000/api/trilhas/id
-    console.log(id);
-    return this.http.get(`${this.url}/trilhas/${id}`);
+    console.log(trilha_id);
+    return this.http.get(`${this.url}/trilhas/${trilha_id}`);
   }
 
   updateTrilha(
@@ -60,23 +60,23 @@ export class TrilhaService {
     info_onibus: any,
     localizacao: any,
     cadeirante: any,
-    id: number
+    trilha_id: any
   ) {
-    console.log(id);
-    const trilha = {
+    console.log(trilha_id);
+    const trilhas = {
       nome,
       descricao,
       info_onibus,
       localizacao,
       cadeirante,
-      id,
+      trilha_id,
     };
-
+    console.log(trilhas);
     return this.http
-      .put(`${this.url}/trilhas/${id}`, trilha)
+      .put(`${this.url}/trilhas/${trilha_id}`, trilhas)
       .subscribe((res) => console.log('bien!'));
   }
-  // deleteTrilha(id) {
-  //   return this.http.delete(`${this.url}/trilhas/${id}`);
-  // }
+  deleteTrilha(id) {
+    return this.http.delete(`${this.url}/trilhas/${id}`);
+  }
 }

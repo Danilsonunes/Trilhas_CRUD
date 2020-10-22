@@ -136,6 +136,30 @@
         </div>
       </div>
       <!-- FIM BLOCO: Trilha Registration -->
+      <!-- INÍCIO BLOCO: Employee Registration -->
+      <div class="form-group">
+        <label class="font-weight-bold" for="trilha_id">Trilha id</label>
+        <input
+          class="form-control"
+          type="number"
+          class="form-control"
+          placeholder="Digite sim o não"
+          formControlName="trilha_id"
+          #trilha_id
+        />
+      </div>
+      <div
+        *ngIf="
+          trilhaForm.controls['trilha_id'].invalid &&
+          (trilhaForm.controls['trilha_id'].dirty ||
+            trilhaForm.controls['trilha_id'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="trilhaForm.controls['trilha_id'].errors.required">
+          O campo deve ser preenchido.
+        </div>
+      </div>
 
       <div class="form-group">
         <button
@@ -145,7 +169,8 @@
               descricao.value,
               info_onibus.value,
               localizacao.value,
-              cadeirante.value
+              cadeirante.value,
+              trilha_id.value
             )
           "
           type="submit"

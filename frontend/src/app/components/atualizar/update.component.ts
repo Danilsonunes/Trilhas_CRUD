@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  FormControl,
+} from '@angular/forms';
 import { TrilhaService } from '../../trilha.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -32,6 +37,10 @@ export class UpdateComponent implements OnInit {
       info_onibus: ['', Validators.required],
       localizacao: ['', Validators.required],
       cadeirante: ['', Validators.required],
+      trilha_id: new FormControl(
+        { value: null, disabled: true },
+        Validators.required
+      ),
     });
   }
 
@@ -46,6 +55,7 @@ export class UpdateComponent implements OnInit {
           info_onibus: this.trilha.info_onibus,
           localizacao: this.trilha.localizacao,
           cadeirante: this.trilha.cadeirante,
+          trilha_id: this.trilha.trilha_id,
         });
       });
     });
@@ -54,7 +64,14 @@ export class UpdateComponent implements OnInit {
    * Metodo responsable por  actualizar una trilha por id
    *
    */
-  updateTrilha(nome, descricao, info_onibus, localizacao, cadeirante, id) {
+  updateTrilha(
+    nome,
+    descricao,
+    info_onibus,
+    localizacao,
+    cadeirante,
+    trilha_id
+  ) {
     this.route.params.subscribe((params) => {
       this.trilhaService.updateTrilha(
         nome,
@@ -62,9 +79,9 @@ export class UpdateComponent implements OnInit {
         info_onibus,
         localizacao,
         cadeirante,
-        id
+        trilha_id
       );
-      console.log(id);
+      console.log(nome);
       this.router.navigate(['trilhas']);
 
       Swal.fire({

@@ -54,6 +54,7 @@ img {
 .card-color {
   background: #55a630;
   box-shadow: 1px 1px 3px gray;
+  padding: 8px;
 }
 .card-link {
   text-decoration: none;
@@ -65,6 +66,19 @@ img {
 .card-link h5 {
   text-align: center;
   text-decoration: underline;
+}
+.card-img-top {
+  padding: 50px;
+}
+.card-body {
+  text-align: center;
+}
+.card-body h5 {
+  font-weight: 700;
+}
+.card-body p {
+  font-size: 20px;
+  font-weight: 400;
 }
 
 /* >>>>>>> 620117b35c1792fbc7328aab352f452cd288d101 */

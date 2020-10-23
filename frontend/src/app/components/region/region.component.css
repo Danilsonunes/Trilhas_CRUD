@@ -1,0 +1,21 @@
+.container {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.nav-color {
+  background: #6495ed;
+  margin-top: 70px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #7c7c7c;
+}
+
+figure {
+  margin-bottom: 50px;
+}
+
+h4 {
+  background-color: rgba(0, 150, 0, 0.1);
+  border-radius: 0 0 5px 5px;
+  color: rgb(63, 63, 63);
+}

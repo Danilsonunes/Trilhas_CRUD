@@ -1,6 +1,24 @@
 .btn-color {
-  background: cornflowerblue;
-  margin-top: 5px;
+  background: #6495ed;
+  color: #fff;
+  margin-top: 70px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px #7c7c7c;
+}
+.delete-btn-color {
+  background: rgba(255, 0, 0, 0.6);
+  color: #fff;
+  margin: 0 0 5px 5px;
+  box-shadow: 1px 1px 3px gray;
+  border-radius: 5px;
+}
+.edit-btn-color {
+  background: rgba(3, 161, 3, 0.6);
+  color: #fff;
+  margin: 0 0 5px 5px;
+  box-shadow: 1px 1px 3px gray;
+  border-radius: 5px;
+}
+.card-img-top {
+  padding: 30px;
 }

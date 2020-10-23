@@ -20,8 +20,8 @@ export class TrilhasComponent implements OnInit {
   }
   deleteTrilha(id: any) {
     Swal.fire({
-      title: 'Tem certeza de querer excluir esta trilha?',
-      text: 'Tome cuidado voce esta proximo a deletar esta trilha!!!',
+      title: 'Tem certeza de que deseja excluir a trilha? ',
+      text: 'Depois de excluído, você não poderá recuperar os dados.!!!',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

@@ -1,29 +1,27 @@
 <div class="container">
-  <button type="button" class="btn btn-color btn-lg btn-block" href="#">
-    LISTA DE TRILHAS
-  </button>
+  <div class="btn btn-color btn-lg btn-block">Lista de trilhas</div>
 </div>
 
 <div class="container mx-auto p-4">
   <div class="card-columns">
     <div class="card" *ngFor="let trilha of trilhas">
-      <img src="../../../assets/2.png" class="card-img-top" alt="..." />
+      <img src="../../../assets/viagem.svg" class="card-img-top" alt="..." />
       <div class="card-body">
-        <h5 class="card-title">Nome: {{ trilha.nome }}</h5>
-        <p class="card-text">Descricao: {{ trilha.descricao }}</p>
-        <p>Onibus: {{ trilha.info_onibus }}</p>
-        <p>Cadeirante: {{ trilha.cadeirante }}</p>
-        <p>Localizacao: {{ trilha.localizacao }}</p>
+        <h5 class="card-title"><b>Nome:</b> {{ trilha.nome }}</h5>
+        <p class="card-text"><b>Descrição:</b> {{ trilha.descricao }}</p>
+        <p><b>Onibus:</b> {{ trilha.info_onibus }}</p>
+        <p><b>Cadeirante:</b> {{ trilha.cadeirante }}</p>
+        <p><b>Localização:</b> {{ trilha.localizacao }}</p>
       </div>
       <button
         [routerLink]="['/trilhas', trilha.trilha_id]"
-        class="btn btn-success btn-lg"
+        class="btn edit-btn-color btn-md"
       >
         Atualizar
       </button>
       <button
         (click)="deleteTrilha(trilha.trilha_id)"
-        class="btn btn-danger btn-lg"
+        class="btn delete-btn-color btn-md"
       >
         Deletar
       </button>
